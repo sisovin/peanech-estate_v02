@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeanechEstate - Premium Real Estate Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- Top Bar -->
+    <div class="bg-gray-900 text-white py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+            <div class="flex space-x-6">
+                <span class="flex items-center"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</span>
+                <span class="flex items-center"><i class="fas fa-envelope mr-2"></i>info@peaneche.com</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-primary-400 transition-colors"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-primary-400 transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-primary-400 transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary-400 transition-colors"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-building text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">PeanechEstate</h1>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Premium Properties</p>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="#properties" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Properties</a>
+                    <a href="#agents" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Agents</a>
+                    <a href="#features" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Features</a>
+                    <a href="#dashboard" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Dashboard</a>
+                </nav>
+
+                <!-- Right Section -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+
+                    <!-- User Avatar -->
+                    <div class="relative">
+                        <button id="userMenuButton" class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-700 rounded-lg p-2 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User" class="w-8 h-8 rounded-full">
+                            <i class="fas fa-chevron-down text-sm"></i>
+                        </button>
+                        <div id="userMenu" class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-2 hidden">
+                            <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Settings</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuButton" class="lg:hidden p-2">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobileMenu" class="lg:hidden hidden border-t border-gray-200 dark:border-gray-700 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Home</a>
+                    <a href="#properties" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Properties</a>
+                    <a href="#agents" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Agents</a>
+                    <a href="#features" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Features</a>
+                    <a href="#dashboard" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 transition-colors">Dashboard</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-900 via-purple-900 to-gray-900"></div>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float"></div>
+            <div class="absolute bottom-20 right-20 w-72 h-72 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float animation-delay-4000"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                The Future of
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400 animate-glow">
+                    Real Estate
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                Experience premium properties through cutting-edge technology, AI-powered analytics, and personalized estate management solutions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="btn-primary text-lg px-8 py-4 futuristic-border rounded-lg">
+                    <i class="fas fa-rocket mr-2"></i>Explore Properties
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-lg transition-all duration-300">
+                    <i class="fas fa-play mr-2"></i>Watch Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Core Features</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Discover the powerful features that make PeanechEstate the ultimate real estate platform
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-search text-primary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">AI-Powered Search</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Advanced search algorithms to find your perfect property match</p>
+                </div>
+
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary-100 dark:bg-secondary-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-secondary-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Market Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Real-time market insights and property valuation tools</p>
+                </div>
+
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Mobile First</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Seamless experience across all devices and platforms</p>
+                </div>
+
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Secure Transactions</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Bank-level security for all your property transactions</p>
+                </div>
+
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Expert Agents</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Connect with certified real estate professionals</p>
+                </div>
+
+                <div class="card transform hover:scale-105 transition-all duration-300">
+                    <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Smart Scheduling</h3>
+                    <p class="text-gray-600 dark:text-gray-400">AI-optimized property viewing and meeting scheduling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Stack Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Technical Excellence</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Built with cutting-edge technology stack for unmatched performance and reliability
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fab fa-react text-3xl text-blue-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">React</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fab fa-node-js text-3xl text-green-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Node.js</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fas fa-database text-3xl text-primary-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">MongoDB</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fab fa-aws text-3xl text-orange-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">AWS</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fas fa-brain text-3xl text-purple-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">AI/ML</h4>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-white dark:bg-gray-700 rounded-lg shadow-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform">
+                        <i class="fas fa-lock text-3xl text-red-500"></i>
+                    </div>
+                    <h4 class="font-semibold text-gray-900 dark:text-white">Security</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section id="properties" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Featured Properties</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Discover premium properties handpicked by our expert team
+                </p>
+            </div>
+
+            <div id="propertiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Properties will be loaded dynamically -->
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="btn-primary">View All Properties</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section id="agents" class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Expert Agents</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Meet our certified real estate professionals dedicated to your success
+                </p>
+            </div>
+
+            <div id="agentsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Agents will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketing Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Social Media Integration -->
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Social Media Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        Share properties across all major social platforms and engage with your audience effectively.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                            <i class="fab fa-facebook text-blue-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Facebook</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Share listings & virtual tours</p>
+                        </div>
+                        <div class="p-4 bg-pink-50 dark:bg-pink-900 rounded-lg">
+                            <i class="fab fa-instagram text-pink-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Instagram</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Visual property showcases</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg">
+                            <i class="fab fa-linkedin text-blue-700 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">LinkedIn</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Professional networking</p>
+                        </div>
+                        <div class="p-4 bg-red-50 dark:bg-red-900 rounded-lg">
+                            <i class="fab fa-youtube text-red-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">YouTube</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Property video tours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup -->
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Stay Updated</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        Subscribe to our newsletter for the latest property listings and market insights.
+                    </p>
+                    <form class="space-y-4">
+                        <div>
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                        </div>
+                        <div>
+                            <select class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                                <option>Property Type Interest</option>
+                                <option>Residential</option>
+                                <option>Commercial</option>
+                                <option>Industrial</option>
+                                <option>Land</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full btn-primary">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Integration Section -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Subscription Plans</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Choose the perfect plan for your real estate needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Plan -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Basic</h3>
+                    <div class="text-4xl font-bold text-primary-600 mb-2">$29</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">/month</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>5 Property Listings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Basic Analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Email Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Mobile App Access</li>
+                    </ul>
+                    <button class="w-full btn-primary">Get Started</button>
+                </div>
+
+                <!-- Pro Plan -->
+                <div class="card text-center relative border-2 border-primary-500">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary-500 text-white px-4 py-1 rounded-full text-sm">
+                        Most Popular
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Pro</h3>
+                    <div class="text-4xl font-bold text-primary-600 mb-2">$79</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">/month</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Unlimited Listings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Advanced Analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Priority Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>CRM Integration</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Custom Branding</li>
+                    </ul>
+                    <button class="w-full btn-primary">Get Started</button>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="card text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Enterprise</h3>
+                    <div class="text-4xl font-bold text-primary-600 mb-2">$199</div>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">/month</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Everything in Pro</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>White Label Solution</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>24/7 Phone Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Custom Integrations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Dedicated Manager</li>
+                    </ul>
+                    <button class="w-full btn-primary">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="py-20 bg-white dark:bg-gray-900 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Powerful Dashboards</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                    Comprehensive analytics and management tools for every user type
+                </p>
+            </div>
+
+            <!-- Dashboard Tabs -->
+            <div class="flex justify-center mb-12">
+                <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+                    <button id="userDashTab" class="dashboard-tab active px-6 py-3 rounded-md font-semibold transition-all">User Dashboard</button>
+                    <button id="agentDashTab" class="dashboard-tab px-6 py-3 rounded-md font-semibold transition-all">Agent Dashboard</button>
+                    <button id="adminDashTab" class="dashboard-tab px-6 py-3 rounded-md font-semibold transition-all">Admin Dashboard</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div id="dashboardContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg max-w-md w-full p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white">Book Viewing</h3>
+                <button id="closeBookingModal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="bookingForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Property</label>
+                    <input id="bookingProperty" type="text" readonly class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your Name</label>
+                    <input type="text" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                    <input type="email" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+                    <input type="tel" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Preferred Date</label>
+                    <input type="date" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Preferred Time</label>
+                    <select required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500">
+                        <option value="">Select Time</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                    </select>
+                </div>
+                <div class="flex gap-4">
+                    <button type="submit" class="flex-1 btn-primary">Book Viewing</button>
+                    <button type="button" id="cancelBooking" class="flex-1 bg-gray-300 hover:bg-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-500 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-building text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">PeanechEstate</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Premium real estate solutions powered by cutting-edge technology and expert insights.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#properties" class="text-gray-400 hover:text-white transition-colors">Properties</a></li>
+                        <li><a href="#agents" class="text-gray-400 hover:text-white transition-colors">Agents</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#dashboard" class="text-gray-400 hover:text-white transition-colors">Dashboard</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary-400"></i>
+                            <span class="text-gray-400">123 Estate St, City, State 12345</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-primary-400"></i>
+                            <span class="text-gray-400">+1 (555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-primary-400"></i>
+                            <span class="text-gray-400">info@peaneche.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-clock text-primary-400"></i>
+                            <span class="text-gray-400">Mon-Fri 9AM-6PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest property updates and market insights.</p>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Your email address" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:ring-2 focus:ring-primary-500">
+                        <button type="submit" class="w-full btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400">&copy; 2024 PeanechEstate. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
